@@ -1,0 +1,124 @@
+:root {
+    --deep-purple: #1a0033;
+    --accent-purple: #3d0066;
+    --gold: #d4af37;
+    --gold-hover: #f1d592;
+    --text-white: #f8f9fa;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: #05000a; color: var(--text-white); line-height: 1.6; }
+
+/* Navigation */
+header {
+    background: rgba(26, 0, 51, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 8%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.6rem; font-weight: 700; color: white; }
+.logo span { color: var(--gold); }
+.nav-links { list-style: none; display: flex; align-items: center; }
+.nav-links a { color: white; text-decoration: none; margin-left: 2rem; font-weight: 300; }
+.nav-cta { border: 1px solid var(--gold); padding: 8px 20px; border-radius: 4px; color: var(--gold) !important; transition: 0.3s; }
+.nav-cta:hover { background: var(--gold); color: var(--deep-purple) !important; }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=2070') center/cover;
+    position: relative;
+}
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle, rgba(26,0,51,0.7) 0%, rgba(5,0,10,1) 100%); }
+.hero-content { position: relative; z-index: 2; max-width: 900px; padding: 20px; }
+.badge { color: var(--gold); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; display: block; }
+h1 { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1.1; margin-bottom: 25px; }
+h1 span { color: var(--gold); }
+
+/* Category Grid */
+.categories { padding: 100px 8%; background: #fff; color: #333; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 2.5rem; color: var(--deep-purple); }
+.section-title span { color: var(--gold); }
+.underline { width: 60px; height: 4px; background: var(--gold); margin: 10px auto; }
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.cat-card {
+    background: #fdfdfd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+.cat-card:hover { transform: translateY(-10px); }
+.cat-img { height: 200px; background-size: cover; background-position: center; }
+.cat-card h3 { padding: 20px 20px 5px; color: var(--deep-purple); }
+.cat-card p { padding: 0 20px 20px; font-size: 0.9rem; color: #666; }
+
+/* Vendor Section with Glassmorphism */
+.vendor-wrap { padding: 100px 8%; background: var(--deep-purple); display: flex; justify-content: center; }
+.glass-card { 
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+.modern-form input, .modern-select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+}
+.btn-gold-full {
+    width: 100%;
+    padding: 15px;
+    background: var(--gold);
+    color: var(--deep-purple);
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.or-separator { margin: 25px 0; color: #888; font-size: 0.8rem; position: relative; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .category-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Procure | Luxury Hospitality Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Hotel<span>Procure</span></div>
+            <ul class="nav-links">
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#vendor-section" class="nav-cta">Join as Vendor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">The Gold Standard in Procurement</span>
+            <h1>Sourcing Excellence for <span>Modern Hospitality</span></h1>
+            <p>Connect with verified global suppliers. Quality equipment, seamless logistics, and exclusive pricing for your establishment.</p>
+            <div class="hero-btns">
+                <a href="#categories" class="btn-gold">Explore Categories</a>
+                <a href="#vendor-section" class="btn-glass">Become a Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="categories">
+        <div class="section-title">
+            <h2>Marketplace <span>Categories</span></h2>
+            <div class="underline"></div>
+        </div>
+        <div class="category-grid">
+            <div class="cat-card">
+                <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=400')"></div>
+                <h3>Commercial Kitchen</h3>
+                <p>Ovens, refrigeration, and industrial cookware.</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=400')"></div>
+                <h3>Guest Room Luxury</h3>
+                <p>Premium linens, bedding, and smart-room tech.</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400')"></div>
+                <h3>Toiletries & Spa</h3>
+                <p>Eco-friendly amenities and wellness supplies.</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=400')"></div>
+                <h3>Lobby & Furniture</h3>
+                <p>Designer seating and reception arrangements.</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400')"></div>
+                <h3>Bathroom Supplies</h3>
+                <p>Eco-friendly amenities and wellness supplies.</p>
+            </div>
+            <div class="cat-card">
+                <div class="cat-img" style="background-image: url('https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=400')"></div>
+                <h3>Uniforms & Work Wears</h3>
+                <p>Designer seating and reception arrangements.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="vendor-section" class="vendor-wrap">
+        <div class="glass-card">
+            <div class="form-header">
+                <h2>Vendor <span>Onboarding</span></h2>
+                <p>Scale your business with the industry's leading hotels.</p>
+            </div>
+            
+            <form id="vendorForm" class="modern-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name / Company" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Business Email" required>
+                </div>
+                <select class="modern-select">
+                    <option disabled selected>Primary Product Line</option>
+                    <option>Kitchen & Bar</option>
+                    <option>Linens & Decor</option>
+                    <option>Housekeeping</option>
+                    <option>Technology</option>
+                </select>
+                <button type="submit" class="btn-gold-full">Send Application</button>
+            </form>
+
+            <div class="or-separator"><span>OR</span></div>
+
+            <a href="https://wa.me/yournumber" class="btn-whatsapp">
+                <i data-lucide="message-circle"></i> Join Vendor WhatsApp Community
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hotel Procure. Crafted for the Hospitality Elite.</p>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
