@@ -121,4 +121,67 @@ h1 span { color: var(--gold); }
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     .category-grid { grid-template-columns: 1fr; }
+}/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets and small laptops (under 1024px) */
+@media (max-width: 1024px) {
+    h1 { font-size: 3rem; }
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    }
 }
+
+/* Mobile Phones (under 768px) */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    header { padding: 10px 5%; }
+    .nav-links { display: none; } /* Hide links or implement a hamburger menu */
+    .nav-logo { height: 40px; }
+
+    /* Hero Section */
+    .hero { height: auto; padding: 120px 5% 60px; }
+    h1 { font-size: 2.2rem; }
+    .hero-btns { display: flex; flex-direction: column; gap: 15px; }
+    .btn-gold, .btn-glass { margin-right: 0; width: 100%; text-align: center; }
+
+    /* Categories Grid */
+    .categories { padding: 60px 5%; }
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for phones */
+        gap: 12px;
+    }
+    .cat-card {
+        padding: 20px 10px;
+        font-size: 0.8rem;
+        min-height: 80px;
+    }
+
+    /* Vendor Form */
+    .vendor-wrap { padding: 60px 5%; }
+    .glass-card { padding: 30px 20px; }
+    
+    /* Make side-by-side form rows stack vertically */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .modern-form input, .modern-select {
+        margin-bottom: 12px;
+    }
+
+    .cac-logic {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Very Small Phones (under 480px) */
+@media (max-width: 480px) {
+    .category-grid {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+    h1 { font-size: 1.8rem; }
+}
+
