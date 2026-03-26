@@ -45,36 +45,62 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 h1 { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1.1; margin-bottom: 25px; }
 h1 span { color: var(--gold); }
 
+/* --- Hero Buttons Specific Fix --- */
 .hero-btns {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+    width: 100%;
 }
+
+.btn-gold, .btn-glass {
+    /* Use flex for perfect text centering */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Dimensions */
+    padding: 0 30px; /* Horizontal padding only */
+    height: 55px;    /* Fixed height ensures they match perfectly */
+    min-width: 220px;
+    
+    /* Typography */
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid #ffffff;
+}
+
 .btn-gold {
     background-color: #ffffff;
     color: var(--deep-purple);
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    border: 2px solid #ffffff;
-    transition: 0.3s;
 }
-.btn-gold:hover, .btn-gold:focus {
-    background-color: var(--gold);
-    border-color: var(--gold);
-}
+
 .btn-glass {
     background-color: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid #ffffff;
     backdrop-filter: blur(5px);
-    transition: 0.3s;
+}
+
+/* --- Mobile Alignment Fix --- */
+@media (max-width: 768px) {
+    .hero-btns {
+        flex-direction: column; /* Stack them vertically */
+        gap: 12px;
+        padding: 0 10%; /* Add side breathing room */
+    }
+
+    .btn-gold, .btn-glass {
+        width: 100%;      /* Take full width of the container */
+        max-width: 300px; /* But don't let them get too giant */
+        height: 50px;     /* Slightly slimmer for mobile screens */
+        margin: 0;        /* Reset any stray margins */
+    }
 }
 
 /* Category Grid */
@@ -225,7 +251,7 @@ h1 span { color: var(--gold); }
     padding: 80px 8%;
     background-color: #ffffff;
     color: var(--deep-purple);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .about-container {
