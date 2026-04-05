@@ -127,39 +127,217 @@ h1 span { color: var(--gold); }
 .cat-img { height: 200px; background-size: cover; background-position: center; }
 .cat-card h3 { padding: 20px 20px 5px; color: var(--deep-purple); }
 .cat-card p { padding: 0 20px 20px; font-size: 0.9rem; color: #666; }
+/* Container Background */
+.vendor-wrap {
+    padding: 100px 8%;
+    background: radial-gradient(circle at top, #1a0033 0%, #05000a 100%);
+    display: flex;
+    justify-content: center;
+}
 
-/* Vendor Section with Glassmorphism */
-.vendor-wrap { padding: 100px 8%; background: var(--deep-purple); display: flex; justify-content: center; }
-.glass-card { 
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    padding: 50px;
-    border-radius: 20px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
     width: 100%;
-    max-width: 600px;
-    text-align: center;
+    max-width: 750px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
-.modern-form input, .modern-select {
+
+/* Fieldset and Legend Styling */
+.modern-form fieldset {
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modern-form legend {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 12px;
+}
+
+/* Responsive Grid Rows */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.modern-form label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+
+/* Universal Inputs */
+.modern-form input, 
+.modern-form select {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid #444;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    color: white;
+    color: #fff;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
 }
+
+.modern-form input:focus, 
+.modern-form select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.modern-form select option {
+    background-color: #1a0033; /* Matches your --deep-purple */
+    color: #ffffff;            /* Forces text to be white */
+    padding: 10px;
+}
+
+/* Submit Button */
 .btn-gold-full {
     width: 100%;
-    padding: 15px;
+    padding: 20px;
     background: var(--gold);
     color: var(--deep-purple);
     border: none;
+    border-radius: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    border-radius: 8px;
+    letter-spacing: 1.5px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.btn-gold-full:hover {
+    background: #f1d592;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* --- MOBILE ADAPTATION --- */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; /* Stack side-by-side fields */
+        gap: 15px;
+    }
+    
+    .glass-card {
+        padding: 25px 15px;
+    }
+
+    .modern-form fieldset {
+        padding: 20px 12px;
+    }
+}
+
+/* --- Social Footer --- */
+.footer-socials {
+    padding: 40px 8%;
+    background: #05000a;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.footer-socials p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    z-index: 2000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+}
+
+/* Tooltip that appears on hover */
+.chat-tooltip {
+    position: absolute;
+    right: 75px;
+    background: #fff;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.whatsapp-float:hover .chat-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Adjustment for Float */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+    .chat-tooltip { display: none; } /* Hide tooltip on mobile to save space */
+}
+
 .btn-whatsapp {
     display: flex;
     align-items: center;
