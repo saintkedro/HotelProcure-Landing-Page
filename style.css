@@ -127,36 +127,49 @@ h1 span { color: var(--gold); }
 .cat-img { height: 200px; background-size: cover; background-position: center; }
 .cat-card h3 { padding: 20px 20px 5px; color: var(--deep-purple); }
 .cat-card p { padding: 0 20px 20px; font-size: 0.9rem; color: #666; }
-/* Container Background */
+
 .vendor-wrap {
     padding: 100px 8%;
     background: radial-gradient(circle at top, #1a0033 0%, #05000a 100%);
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stacks header above card */
+    align-items: center;    /* Centers both horizontally */
+    gap: 40px;              /* Space between header and card */
 }
 
-/* Glassmorphism Card */
+.form-header-centered {
+    text-align: center;
+    max-width: 700px;
+}
+
+.form-header-centered h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.form-header-centered h2 span { color: var(--gold); }
+.form-header-centered p { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; }
+
 .glass-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 40px;
+    padding: 45px;
     border-radius: 24px;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     width: 100%;
-    max-width: 750px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    max-width: 850px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Fieldset and Legend Styling */
+/* --- FORM STYLES --- */
 .modern-form fieldset {
     border: 1px solid rgba(212, 175, 55, 0.15);
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 }
 
 .modern-form legend {
@@ -168,11 +181,7 @@ h1 span { color: var(--gold); }
     padding: 0 12px;
 }
 
-/* Responsive Grid Rows */
-.form-row {
-    display: flex;
-    gap: 20px;
-}
+.form-row { display: flex; gap: 20px; margin-bottom: 15px; }
 
 .modern-form label {
     flex: 1;
@@ -181,12 +190,9 @@ h1 span { color: var(--gold); }
     gap: 8px;
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.8);
-    text-align: left;
 }
 
-/* Universal Inputs */
-.modern-form input, 
-.modern-form select {
+.modern-form input, .modern-form select {
     width: 100%;
     padding: 14px 16px;
     background: rgba(0, 0, 0, 0.4);
@@ -194,23 +200,10 @@ h1 span { color: var(--gold); }
     border-radius: 8px;
     color: #fff;
     font-size: 0.95rem;
-    transition: 0.3s ease;
 }
 
-.modern-form input:focus, 
-.modern-form select:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.08);
-}
+.modern-form select option { background-color: #1a0033; color: #fff; }
 
-.modern-form select option {
-    background-color: #1a0033; /* Matches your --deep-purple */
-    color: #ffffff;            /* Forces text to be white */
-    padding: 10px;
-}
-
-/* Submit Button */
 .btn-gold-full {
     width: 100%;
     padding: 20px;
@@ -220,33 +213,11 @@ h1 span { color: var(--gold); }
     border-radius: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-.btn-gold-full:hover {
-    background: #f1d592;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-}
-
-/* --- MOBILE ADAPTATION --- */
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column; /* Stack side-by-side fields */
-        gap: 15px;
-    }
-    
-    .glass-card {
-        padding: 25px 15px;
-    }
-
-    .modern-form fieldset {
-        padding: 20px 12px;
-    }
-}
-
+.btn-gold-full:hover { background: #f1d592; transform: translateY(-2px); }
 /* --- Social Footer --- */
 .footer-socials {
     padding: 40px 8%;
